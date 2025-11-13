@@ -1,6 +1,5 @@
 def calculate_final_score(final_money, final_animals, farm_level, scoring_weights=None):
     """
-    Author: Sumit Paudel
     Techniques used:
         - f-strings
         - optional parameter (scoring_weights)
