@@ -1,0 +1,25 @@
+def advance_season(current_season, max_seasons):
+    """
+    Tracks and updates the game's current season.
+
+    Concern:
+        Handle only season progression move to the next season 
+        and determine whether the game should end because the 
+        maximum number of seasons has been reached.
+
+    Parameters:
+        current_season (int): The season the game is currently on.
+        max_seasons (int): The final season number allowed in the game.
+
+    Returns:
+        tuple:
+            next_season (int): Updated season number.
+            game_over (bool): True if no seasons remain, False otherwise.
+    """
+
+    next_season = current_season + 1
+
+    game_over = next_season > max_seasons
+
+    return next_season, game_over
+
