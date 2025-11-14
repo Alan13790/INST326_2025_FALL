@@ -1,22 +1,20 @@
 import random
 
-def trigger_random_event(events, player_stats, rng=None):
+def random_event(player_stats, events, rng=None):
     """
     Introduces a random event each season, influencing the player's money or resources.
 
     Args:
-        events (dict): A dictionary where keys are event names (e.g., "Drought", "Rain"),
-                       and values are dictionaries with 'probability' and 'effects' keys.
+        player_stats (dict): The player's current resources (money, crops, animals).
+        events (dict): Event dictionary with probabilities and effects.
                        Example:
                        {
                          "Drought": {"probability": 0.2, "effects": {"crops": -20}},
                          "Rain": {"probability": 0.3, "effects": {"crops": +15}},
-                         "Pest Infestation": {"probability": 0.1, "effects": {"animals": -5}}
+                         "Pest Infestation": {"probability": 0.1, "effects": {"animals": -2}},
+                         "No Event": {"probability": 0.4, "effects": {}}
                        }
-        player_stats (dict): The player's current resources, e.g.:
-                             {"money": 500, "crops": 100, "animals": 5}
-        rng (random.Random, optional): Random number generator instance for testing.
-                                       Defaults to None (uses system randomness).
+        rng (random.Random, optional): Random number generator for reproducible results.
 
     Returns:
         dict: Updated player_stats after applying event effects.
@@ -24,26 +22,27 @@ def trigger_random_event(events, player_stats, rng=None):
     if rng is None:
         rng = random
 
-    # Step 1: Generate a random number and choose event based on probabilities
+    # Step 1: Random roll to pick event
     roll = rng.random()
     cumulative = 0
     chosen_event = None
 
-    for event_name, event_data in events.items():
-        cumulative += event_data["probability"]
+    for event_name, event_info in events.items():
+        cumulative += event_info["probability"]
         if roll <= cumulative:
             chosen_event = event_name
             break
 
-    # Step 2: Apply event effects (if any event occurs)
+    # Step 2: Apply effects
     if chosen_event:
         effects = events[chosen_event]["effects"]
-        for key, change in effects.items():
-            if key in player_stats:
-                player_stats[key] += change
-        print(f"Event: {chosen_event}! {effects}")
+        for resource, change in effects.items():
+            if resource in player_stats:
+                player_stats[resource] += change
+        print(f"Event: {chosen_event}! Effects: {effects}")
     else:
         print("No special event this season.")
 
     # Step 3: Return updated stats
     return player_stats
+
