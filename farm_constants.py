@@ -26,5 +26,6 @@ ACHIEVEMENTS = {
     "Master Cultivator": lambda s: s['total_crops_grown'] >= 20
 }
 """
+Author: Alan Z.
 Techniques: Lambda Function
 """
