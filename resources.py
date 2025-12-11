@@ -15,6 +15,7 @@ class Resource:
 
     def status(self):
         """
+        Author: Alan Z.
         Techniques: f-strings with expressions
         Return a formatted string showing growth status and sell price.
         """
@@ -25,6 +26,7 @@ class Resource:
 class Crop(Resource):
     def __init__(self, sell_price=None, growth_time=None):
         """
+        Author: Alan Z.
         Techniques: Optional parameters
         Initialize a crop with optional sell price and growth time.
         """
