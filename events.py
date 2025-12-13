@@ -4,7 +4,8 @@ def handle_events(self):
 
     Author: Andrew Cusi
     Techniques used:
-    - Set operations (union)
+    Set operations (union)
+    Conditonal Epxressions
     """
     multiplier = 0.8 if self.perk == "Risk Manager" else 1.0
     candidates = {'crop'} if self.crops else set()
