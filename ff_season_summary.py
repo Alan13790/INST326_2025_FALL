@@ -1,10 +1,6 @@
     def season_summary(self):
        """Print achievements.
 
-
-       Techniques used:
-       - comprehensions / generator expressions
-       - f-strings containing expressions
        """
        print(f"Money: ${self.money}")
        print("Achievements:")
