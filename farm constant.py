@@ -59,7 +59,7 @@ BASE_ANIMAL_SLOTS = 2
 
 """
 Author: Andrew Cusi
-Technique used: Lambda (list.sort)
+Technique used: Lambda
 Dictionary mapping achievement names to lambda functions.
 
 Each lambda takes a game state dictionary `s` and returns True
@@ -70,16 +70,3 @@ ACHIEVEMENTS = {
    "Herder": lambda s: s['total_cows_born'] >= 5 and s['total_chickens_born'] >= 10,
    "Master Cultivator": lambda s: s['total_crops_grown'] >= 20
 }
-
-
-"""
-Sorts achievements using a lambda key function.
-
-This demonstrates the use of `list.sort` with a lambda expression
-as the key function.
-"""
-ACHIEVEMENTS.sort(key=lambda achievement: achievement)
-
-
-"""Outputs the sorted achievements."""
-print(ACHIEVEMENTS)
