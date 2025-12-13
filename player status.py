@@ -1,6 +1,8 @@
 def print_status(self):
         """Print the current season status.
-        
+
+        Author: Sumit Paudel
+        Technique Used: Lambda (sorted)
         """
         print(f"\nSeason {self.season} of {MAX_SEASONS}")
         print(f"Money: ${self.money} | Farm Level: {self.level}")
