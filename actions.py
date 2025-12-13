@@ -4,8 +4,7 @@ def _action_plant_crop(self):
 
     Author: Sumit Paudel
     Techniques used:
-    - Conditional expressions for perk bonus
-    - f-strings for dynamic messages
+     f-strings for dynamic messages
     """
     if self.money < CROP_COST:
         print(f"Not enough money to plant a crop (Need ${CROP_COST}). Choose something else.")
@@ -45,7 +44,7 @@ def _action_buy_cow(self):
 
     Author: Sumit Paudel
     Techniques used:
-    - sequence unpacking 
+     sequence unpacking 
     """
     if self.money < COW_COST:
         print(f"Not enough money to buy a cow (Need ${COW_COST}). Choose something else.")
