@@ -58,8 +58,6 @@ BASE_ANIMAL_SLOTS = 2
 
 
 """
-Author: Andrew Cusi
-Technique used: Lambda
 Dictionary mapping achievement names to lambda functions.
 
 Each lambda takes a game state dictionary `s` and returns True
